@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Poll } from './poll.models';
 import { Observable } from 'rxjs';
+import { Poll } from './poll.models';
 
 
 @Injectable({
@@ -13,6 +13,7 @@ export class PollService {
   constructor(private http: HttpClient) { }
 
   createPoll(poll:Poll): Observable<Poll>{
+    
     return this.http.post<Poll>(this.baseUrl, poll);
   }
 
